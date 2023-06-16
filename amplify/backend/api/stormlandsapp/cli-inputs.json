@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "stormlandsapp",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "C:\\Users\\Alan.CRVENABANANA\\Desktop\\Upwork-jobs\\Stormlands\\stormlands-app\\amplify\\backend\\api\\stormlandsapp\\schema.graphql",
+    "defaultAuthType": {
+      "mode": "API_KEY",
+      "expirationTime": 365,
+      "apiKeyExpirationDate": "2023-10-18T07:41:45.497Z",
+      "keyDescription": "stormlandsapikey"
+    },
+    "conflictResolution": {},
+    "additionalAuthTypes": [
+      {
+        "mode": "AMAZON_COGNITO_USER_POOLS",
+        "cognitoUserPoolId": "authstormlandsapp3a390a8d"
+      }
+    ]
+  }
+}

@@ -1,0 +1,52 @@
+const stepsData: StepData[] = [
+    {
+        sortOrder: 1,
+        label: 'Mine',
+        isCompleted: false,
+        subSteps: [
+            { label: 'Mine Resources', sortOrder: 1, isCompleted: false },
+            { label: 'Mineral Classification', sortOrder: 2, isCompleted: false },
+            { label: 'Mining & Milling', sortOrder: 3, isCompleted: false },
+        ],
+    },
+    {
+        label: 'Production',
+        subSteps: [
+            { label: 'Concentrate Production', sortOrder: 1, isCompleted: false },
+            { label: 'Concentrate', sortOrder: 2, isCompleted: false },
+        ],
+    },
+    {
+        label: 'Revenue',
+        subSteps: [
+            { label: 'Payables', sortOrder: 1, isCompleted: false },
+            { label: 'Price', sortOrder: 2, isCompleted: false },
+            { label: 'Price Quote', sortOrder: 3, isCompleted: false },
+            { label: 'Price Type', sortOrder: 4, isCompleted: false },
+            { label: 'Quotational Period', sortOrder: 5, isCompleted: false },
+            { label: 'Payables', sortOrder: 1, isCompleted: false },
+            { label: 'Price', sortOrder: 2, isCompleted: false },
+            { label: 'Price Quote', sortOrder: 3, isCompleted: false },
+            { label: 'Price Type', sortOrder: 4, isCompleted: false },
+            { label: 'Quotational Period', sortOrder: 5, isCompleted: false },
+        ],
+    },
+    {
+        label: 'Expenditure',
+        subSteps: [
+            { label: 'Capex', sortOrder: 1, isCompleted: false },
+            { label: 'Overheads', sortOrder: 2, isCompleted: false },
+            { label: 'Operating', sortOrder: 3, isCompleted: false },
+            { label: 'Working Capital', sortOrder: 4, isCompleted: false },
+            { label: 'Environmental', sortOrder: 5, isCompleted: false },
+        ],
+    },
+    {
+        label: 'Financial',
+        subSteps: [
+            { label: 'Depreciation', sortOrder: 1, isCompleted: false },
+            { label: 'Tax & Royalty', sortOrder: 2, isCompleted: false },
+            { label: 'Financial Rates', sortOrder: 3, isCompleted: false },
+        ],
+    },
+];

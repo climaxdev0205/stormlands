@@ -1,0 +1,12 @@
+{
+  "AppSyncApiName": "stormlandsapp",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authstormlandsapp3a390a8d",
+      "Outputs.UserPoolId"
+    ]
+  },
+  "AuthModeLastUpdated": "2022-10-18T07:41:52.029Z"
+}

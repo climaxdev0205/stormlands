@@ -1,0 +1,155 @@
+type User
+  @model
+  @auth(
+    rules: [
+      {
+        allow: owner
+        ownerField: "username"
+        operations: [create, update, delete, read]
+      }
+      {
+        allow: groups
+        groups: ["Admin"]
+        operations: [create, update, delete, read]
+      }
+    ]
+  ) {
+  id: ID!
+  username: String! @index(name: "byUsername", queryField: "userByUsername")
+  email: String
+  name: String
+  surname: String
+  bio: String
+  photo: String
+}
+
+type Project
+  @model
+  @auth(
+    rules: [
+      {
+        allow: owner
+        operations: [create, update, delete, read]
+      }
+      {
+        allow: groups
+        groups: ["Admin"]
+        operations: [create, update, delete, read]
+      }
+    ]
+  ) {
+  id: ID!
+  name: String!
+  location: String!
+  date: String!
+  versions: [Version] @hasMany(indexName: "byProject", fields: ["id"])
+}
+
+type Version
+  @model
+  @auth(
+    rules: [
+      {
+        allow: owner
+        operations: [create, update, delete, read]
+      }
+      {
+        allow: groups
+        groups: ["Admin"]
+        operations: [create, update, delete, read]
+      }
+    ]
+  ) {
+  id: ID!
+  version: String!
+  time: String!
+  date: String!
+  status: String @default(value: "In Progress")
+  npv: Float!
+  projectID: ID! @index(name: "byProject", queryField: "versionByProject")
+  steps: [Step!] @hasMany(indexName: "byVersion", fields: ["id"])
+  isCompleted: Boolean
+}
+
+type Step 
+  @model   
+  @auth(
+    rules: [
+      {
+        allow: owner
+        operations: [create, update, delete, read]
+      }
+      {
+        allow: groups
+        groups: ["Admin"]
+        operations: [create, update, delete, read]
+      }
+    ]
+  ) {
+  id: ID!
+  sortOrder: Int!
+  label: String!
+  isCompleted: Boolean!
+  versionID: ID! @index(name: "byVersion", queryField: "stepByVersion")
+  subSteps: [SubStep!] @hasMany(indexName: "byStep", fields: ["id"])
+}
+
+type SubStep 
+  @model   
+  @auth(
+    rules: [
+      {
+        allow: owner
+        operations: [create, update, delete, read]
+      }
+      {
+        allow: groups
+        groups: ["Admin"]
+        operations: [create, update, delete, read]
+      }
+    ]
+  ) {
+  id: ID!
+  sortOrder: Int!
+  label: String!
+  isCompleted: Boolean!
+  stepID: ID! @index(name: "byStep", queryField: "subStepByStep")
+  formFields: [FormField!] @hasMany(indexName: "bySubStep", fields: ["id"])
+}
+
+type FormField
+  @model
+  @auth(
+    rules: [
+      {
+        allow: owner
+        operations: [create, update, delete, read]
+      }
+      {
+        allow: groups
+        groups: ["Admin"]
+        operations: [create, update, delete, read]
+      }
+    ]
+  ) {
+  id: ID!
+  key: String!
+  value: String!
+  fieldType: String!
+  subStepID: ID! @index(name: "bySubStep", queryField: "formFieldBySubStep")
+}
+
+input CreateSubStepInput {
+  sortOrder: Int!
+  label: String!
+  isCompleted: Boolean
+  stepID: ID!
+  formFields: [CreateFormFieldInput]
+}
+
+input CreateFormFieldInput {
+  key: String!
+  value: String!
+  fieldType: String!
+  subStepID: ID!
+}

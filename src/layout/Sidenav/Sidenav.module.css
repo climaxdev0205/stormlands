@@ -1,0 +1,94 @@
+.aside {
+    width: 204px;
+    position: fixed;
+    color: white;
+    margin-top: 59px
+}
+
+.button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px 12px 0px 16px;
+    gap: 16px;
+    width: 204px;
+    height: 40px;
+    background: white;
+    border: 1px solid rgba(221, 226, 229, 0.45);
+    transition: width 0.3s ease-in-out;
+}
+
+.buttonCollapsed {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px 12px 0px 16px;
+    gap: 16px;
+    width: 50px;
+    height: 40px;
+    background: white;
+    border: 1px solid rgba(221, 226, 229, 0.45);
+    transition: width 0.3s ease-in-out;
+}
+
+.button:active {
+    background: linear-gradient(270deg, #1469A7 3.92%, #4C85AF 89.46%), linear-gradient(270deg, #032442 8.33%, #033059 86.03%);
+}
+
+.button:active .buttonTitle {
+    color: white
+}
+
+.buttonTitle {
+    font-family: 'Roboto';
+    color: #DDE2E5;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.listItem {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.asideExpanded {
+    transition: width 0.3s ease-in-out;
+}
+
+.asideCollapsed {
+    width: 50px;
+    transition: width 0.3s ease-in-out;
+}
+
+.buttonTitleExpanded {
+    display: block;
+}
+
+.buttonTitleCollapsed {
+    display: none;
+}
+
+.buttonExpanded {
+    width: 100%;
+}
+
+.buttonCollapsed {
+    width: 50px;
+}
+
+.listItemExpanded {
+    paddingLeft: "2rem";
+}
+
+.listItemCollapsed {
+    paddingLeft: "0.5rem";
+}

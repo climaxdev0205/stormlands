@@ -1,0 +1,31 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-stormlandsapp-dev-202208-authRole",
+      "UnauthRoleArn": "arn:aws:iam::249897513125:role/amplify-stormlandsapp-dev-202208-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::249897513125:role/amplify-stormlandsapp-dev-202208-authRole",
+      "Region": "eu-west-2",
+      "DeploymentBucketName": "amplify-stormlandsapp-dev-202208-deployment",
+      "UnauthRoleName": "amplify-stormlandsapp-dev-202208-unauthRole",
+      "StackName": "amplify-stormlandsapp-dev-202208",
+      "StackId": "arn:aws:cloudformation:eu-west-2:249897513125:stack/amplify-stormlandsapp-dev-202208/225e1ca0-3dc8-11ed-aed4-0a837a31b980",
+      "AmplifyAppId": "d3m8iq2gsdntwg",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-stormlandsapp-dev-202208-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
+    },
+    "categories": {
+      "auth": {
+        "stormlandsapp3a390a8d": {},
+        "userPoolGroups": {}
+      },
+      "function": {
+        "stormlandsapp3a390a8dPostConfirmation": {
+          "deploymentBucketName": "amplify-stormlandsapp-dev-202208-deployment",
+          "s3Key": "amplify-builds/stormlandsapp3a390a8dPostConfirmation-707a2f70733854646950-build.zip"
+        }
+      },
+      "api": {
+        "stormlandsapp": {}
+      }
+    }
+  }
+}
